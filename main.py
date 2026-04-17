@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-images_raw_path = "/home/user/Documentos/Facultad/PID/Processing-IMG/processed-images"
+images_raw_path = "/home/javiermaita/Documentos/PID/processed-images"
 
 # Montar la carpeta "static" para servir archivos como imágenes, CSS, JS
 app.mount("/static", StaticFiles(directory="static"), name="static")
