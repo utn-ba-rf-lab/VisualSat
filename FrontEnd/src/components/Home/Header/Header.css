@@ -1,0 +1,17 @@
+.header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
+}
+
+.header img{
+    padding-left: 2rem;
+}
+
+.nosotros{
+    padding-right: 2rem;
+}

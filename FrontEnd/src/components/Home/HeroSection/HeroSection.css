@@ -1,0 +1,16 @@
+.heroSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../../assets/Earth.jpg');
+    background-position: center -30%;
+    background-repeat: no-repeat;
+}
+
+.titulo{
+    margin-top: 10%;
+    background: none;
+}

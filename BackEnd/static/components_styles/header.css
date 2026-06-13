@@ -1,0 +1,44 @@
+.header_container{
+    background-color: #ffffff;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_container{
+    width: 20%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visualsat_logo{
+    height: 10rem;
+}
+
+.utn_logo{
+    height: 5rem;
+}
+
+.links_container{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+}
+
+.link_container{
+    font-size: 2rem;
+}
+
+.link_container a{
+    text-decoration: none;
+    color: #2e2e2e;
+}

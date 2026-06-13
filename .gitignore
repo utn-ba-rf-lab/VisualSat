@@ -1,19 +1,65 @@
+# =========================
+# Python
+# =========================
+
 # Entornos virtuales
 venv/
 .env/
 .env.*
 
-# Python cache
+# Cache de Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
+# =========================
+# Node.js / React
+# =========================
+
+node_modules/
+
+# Builds
+dist/
+dist-ssr/
+
+# Archivos locales
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
 # Certificados y claves
+# =========================
+
 *.pem
 *.key
 *.crt
 
-# VSCode / IDEs
-.vscode/
+# =========================
+# IDEs y editores
+# =========================
+
+.vscode/*
+!.vscode/extensions.json
+
 .idea/
+
+# Visual Studio
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Vim
+*.sw?
+
+# macOS
+.DS_Store

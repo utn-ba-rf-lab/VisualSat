@@ -1,0 +1,13 @@
+.satelliteTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.satelliteTitle h2 {
+    margin-left: 2rem;
+}
+
+.satelliteTitle h3 {
+    margin-left: 2rem;
+}
