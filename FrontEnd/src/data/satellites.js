@@ -17,6 +17,14 @@ export const satellites = [
       {
         id: 3,
         img: imagen
+      },
+      {
+        id: 4,
+        img: imagen
+      },
+      {
+        id: 5,
+        img: imagen
       }
     ]
   }

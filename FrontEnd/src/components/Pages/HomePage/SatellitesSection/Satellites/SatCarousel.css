@@ -1,0 +1,12 @@
+.sat_gallery{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+
+.images_cointaner_title{
+    border-bottom: solid 2px var(--primary-color);
+}

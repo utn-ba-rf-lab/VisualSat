@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import './Swiper_component.css';
 
-const Swiper_component = ({images}) => {
+const Swiper_component = ({images = []}) => {
   return (
     <Swiper
         className='swiper_component'

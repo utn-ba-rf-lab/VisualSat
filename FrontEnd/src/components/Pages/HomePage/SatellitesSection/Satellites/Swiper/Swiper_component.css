@@ -3,4 +3,5 @@
 }
 .sat_img{
     height: 20rem;
+    border: solid 4px var(--primary-color);
 }

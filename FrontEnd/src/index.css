@@ -3,7 +3,23 @@
 *{
   margin: 0;
   padding: 0;
-  background: #010101;
+}
+body{
+ background: #010101;
+}
+
+p{
+  color: var(--text-color);
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.034rem;
+}
+
+button{
+  font-family: "Exo 2";
+  font-weight: 700;
 }
 
 .text{

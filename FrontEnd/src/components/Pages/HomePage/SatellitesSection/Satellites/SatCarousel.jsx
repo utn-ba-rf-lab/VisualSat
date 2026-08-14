@@ -1,15 +1,14 @@
 import React from 'react'
-import './Sat_gallery.css'
+import './SatCarousel.css'
 import Swiper_component from './Swiper/Swiper_component'
+import { Navigate } from 'react-router-dom'
 
 const Sat_gallery = ({images}) => {
   return (
     <div className='sat_gallery'>
-      <h4 className='text'>Last images</h4>
+      <h4 className='images_cointaner_title text'>Last images</h4>
 
       <Swiper_component images={images}/>
-
-      <h4 className='text'>view all</h4>
     </div>
   )
 }
