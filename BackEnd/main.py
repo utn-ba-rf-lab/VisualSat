@@ -31,7 +31,7 @@ async def root(request: Request):
     )
 
 #---Servir imagenes
-@app.get("/imagenes")
+@app.get("/api/imagenes")
 async def obtener_imagenes(request: Request):
 
     imagenes = []
