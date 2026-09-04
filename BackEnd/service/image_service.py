@@ -20,7 +20,7 @@ class ImagenService:
 
         imagenes = []
 
-        archivos = os.listdir(self.images_raw_path)
+        archivos = self.obtener_nombres_imagenes(self)
 
         for archivo in archivos:
 
