@@ -68,11 +68,12 @@ Contar con entorno python local (opcional)
 
 ```bash
 python3 -m venv venv
+source venv/bin/activate
 ```
 
-Descargar las librerías FastApi (framework), uvicorn (Servidor ASGI), jinja2 (Motor de plantillas html).
+Descargar las librerías FastApi (framework), uvicorn (Servidor ASGI).
 ```bash
-pip install fastapi uvicorn jinja2
+pip install fastapi uvicorn
 ```
 Levantamos servidor
 ```bash
