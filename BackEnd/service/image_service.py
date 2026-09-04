@@ -20,7 +20,7 @@ class ImagenService:
 
         imagenes = []
 
-        archivos = self.obtener_nombres_imagenes(self)
+        archivos = self.obtener_nombres_imagenes()
 
         for archivo in archivos:
 
