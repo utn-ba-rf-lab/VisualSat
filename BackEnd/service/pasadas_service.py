@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 class PasadasService:
     def __init__(self):
 
-        self.orbit_url = "http://127.0.0.1:8001"
+        self.orbit_url = "http://127.0.0.1:5000"
 
     def hacer_peticion(self, endpoint: str):
 
@@ -35,7 +35,7 @@ class PasadasService:
         return self.hacer_peticion("/passes")
 
     def obtener_por_satelite(self, sat_id: str):
-        return self.hacer_peticion(f"/passes/{sat_id}")
+        return self.hacer_peticion(f"/passes?sate_id={sat_id}")
 
     def obtener_proxima(self):
         return self.hacer_peticion("/next")
