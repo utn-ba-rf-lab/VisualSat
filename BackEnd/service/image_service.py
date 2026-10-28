@@ -8,7 +8,7 @@ from fastapi import Request
 
 class ImagenService:
 
-    def __init__(self, images_path="BackEnd/images/raw"): #Carpeta default x las dudas
+    def __init__(self, images_path=f'{os.path.dirname(os.path.abspath(__file__))}/images/raw'): #Carpeta default x las dudas
         self.images_raw_path = images_path
 
         if os.path.exists(self.images_raw_path):

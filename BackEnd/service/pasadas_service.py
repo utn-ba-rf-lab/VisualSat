@@ -6,9 +6,12 @@ import logging
 logger = logging.getLogger(__name__)
 
 class PasadasService:
-    def __init__(self):
+    def __init__(self, orbit_url=""):
 
-        self.orbit_url = "http://127.0.0.1:5000"
+        if orbit_url == "":
+            self.orbit_url = "http://127.0.0.1:5000"
+        else:
+            self.orbit_url = orbit_url
 
     def hacer_peticion(self, endpoint: str):
 
@@ -34,8 +37,17 @@ class PasadasService:
     def obtener_todas(self):
         return self.hacer_peticion("/passes")
 
-    def obtener_por_satelite(self, sat_id: str):
-        return self.hacer_peticion(f"/passes?sate_id={sat_id}")
+    def obtener_por_satelite(self, sate_id: str):
+        return self.hacer_peticion(f"/passes?sate_id={sate_id}")
 
     def obtener_proxima(self):
-        return self.hacer_peticion("/next")
+        return self.hacer_peticion("/passes/next")
+
+    def obtener_anteriores(self):
+        return self.hacer_peticion("/passes/past")
+
+    def obtener_anteriores_por_satelite(self, sate_id: str):
+        return self.hacer_peticion(f"/passes/past?sate_id={sate_id}")
+
+    def obtener_ultima(self):
+        return self.hacer_peticion("/passes/last")
