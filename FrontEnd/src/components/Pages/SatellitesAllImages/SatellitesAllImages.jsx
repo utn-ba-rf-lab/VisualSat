@@ -16,7 +16,7 @@ const SatellitesAllImages = () => {
         
         <h3 className='text'>{satellitename}</h3>//Titulo
         
-        <Pasadas/>//Pasadas
+        <Pasadas satName={satellitename}/>//Pasadas
         
         <SatGallery images={satData.images}/>//Imagenes
     </div>

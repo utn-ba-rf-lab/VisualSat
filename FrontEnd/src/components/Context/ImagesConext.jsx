@@ -25,23 +25,6 @@ export const ImagenesProvider = ({ children }) => {
     }
   }, []);
 
-  const fetchImagenesPorSatelite = useCallback(async (satelite) => {
-    if (!satelite) return;
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.get(`${API_BASE_URL}/imagenes/${satelite}`);
-      setImagenesSatelite(response.data);
-      return response.data;
-    } catch (err) {
-      console.error(`Error al obtener imágenes del satélite ${satelite}:`, err);
-      setError(err);
-      throw err;
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
   useEffect(() => {
     fetchTodasImagenes();
   }, [fetchTodasImagenes]);
