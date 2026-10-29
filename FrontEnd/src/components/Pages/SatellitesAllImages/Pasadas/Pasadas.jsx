@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { pasadasData } from '../../../../data/pasadas'
+import PasadasService from '../../../../services/pasadas.js'
 import './Pasadas.css'
 
 const Pasadas = () => {
     const pasadasAntiguas = pasadasData.filter(p => p.new == false)
     const pasadasNuevas = pasadasData.filter(p => p.new == true)
+	const [pasadas, setPasadas] = useState([]);
+
+	useEffect(() => {
+		const pasadas = PasadasService.obtenerPasadas({sate_id: "59051"});
+		setPasadas(pasadas);
+	}, []);
 
     return (
         <div className="pasadasCointainer">

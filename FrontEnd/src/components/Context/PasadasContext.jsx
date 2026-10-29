@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import PasadasService from '../../services/pasadas.js'
 
 const PasadasContext = createContext(null);
 
@@ -7,12 +8,20 @@ export const PasadasProvider = ({ children }) => {
   const [pasadas, setPasadas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const fetchPasadas = async () => {
+  
+  const fetchPasadas = async (tipo = "proximas", sate_id = "") => {
     setLoading(true);
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/pasadas");
-      setPasadas(response.data);
+	  var pasadas;
+	  const params = (sate_id == "") ? {} : {sate_id: sate_id};
+	  if (tipo == "proximas") {
+	      pasadas = await PasadasService.obtenerPasadas(params);
+		  console.debug("Pasadas: ", pasadas)
+	  } else {
+	      pasadas = await PasadasService.obtenerPasadasAnteriores(params);
+		  console.debug("Pasadas: ", pasadas)
+	  }
+      setPasadas(pasadas);
       setError(null);
     } catch (err) {
       console.error("Error al obtener pasadas:", err);
