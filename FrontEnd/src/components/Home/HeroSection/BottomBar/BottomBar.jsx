@@ -1,12 +1,28 @@
-import React from 'react'
-import './BottomBar.css'
+import React, { useState } from 'react';
+import './BottomBar.css';
+import SatelitesModal from '../../../Modals/SatelitesModal/SatelitesModal';
 
 const BottomBar = () => {
-  return (
-    <div className='bottomBar'>
-      <button className='sats_button button text'>Satélites</button>
-    </div>
-  )
-}
+  const [satelitesModalOpen, setSatelitesModalOpen] = useState(false);
 
-export default BottomBar
+  return (
+    <>
+      <div className="bottomBar">
+        <button
+          type="button"
+          className="sats_button button text"
+          onClick={() => setSatelitesModalOpen(true)}
+        >
+          Satélites
+        </button>
+      </div>
+
+      <SatelitesModal
+        isOpen={satelitesModalOpen}
+        onClose={() => setSatelitesModalOpen(false)}
+      />
+    </>
+  );
+};
+
+export default BottomBar;

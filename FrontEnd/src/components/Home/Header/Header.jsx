@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './Header.css';
 import logo from '../../../assets/VisualSat_isotipo.png';
 import { useNavigate } from 'react-router-dom';
+import PasadasModal from '../../Modals/PasadasModal/PasadasModal';
 import NosotrosModal from '../../Modals/NosotrosModal/NosotrosModal';
-import PasadasModal from '../../Pages/PasadasPage/PasadasModal';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -71,6 +71,7 @@ const Header = () => {
         onClose={() => setPasadasModalOpen(false)}
       />
 
+      
       <NosotrosModal
         isOpen={nosotrosModalOpen}
         onClose={() => setNosotrosModalOpen(false)}

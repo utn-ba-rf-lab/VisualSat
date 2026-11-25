@@ -1,24 +1,22 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
+import ImagenesService from '../../services/imagenes.js';
 
 const ImagenesContext = createContext(null);
 
-const API_BASE_URL = "http://127.0.0.1:8000/api";
-
 export const ImagenesProvider = ({ children }) => {
   const [imagenes, setImagenes] = useState([]);
-  const [imagenesSatelite, setImagenesSatelite] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const fetchTodasImagenes = useCallback(async () => {
+  const fetchImagenes = useCallback(async () => {
     setLoading(true);
-    setError(null);
     try {
-      const response = await axios.get(`${API_BASE_URL}/imagenes`);
-      setImagenes(response.data);
+      const data = await ImagenesService.obtenerImagenes();
+      console.debug("Imágenes: ", data);
+      setImagenes(data);
+      setError(null);
     } catch (err) {
-      console.error("Error al obtener todas las imágenes:", err);
+      console.error("Error al obtener imágenes:", err);
       setError(err);
     } finally {
       setLoading(false);
@@ -26,18 +24,20 @@ export const ImagenesProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetchTodasImagenes();
-  }, [fetchTodasImagenes]);
-
-  const value = {
-    imagenes,
-    imagenesSatelite,
-    loading,
-    error
-  };
+    fetchImagenes();
+  }, [fetchImagenes]);
 
   return (
-    <ImagenesContext.Provider value={value}>
+    <ImagenesContext.Provider
+      value={{
+        imagenes,
+        loading,
+        error,
+        refetchImagenes: fetchImagenes,
+        fetchImagenesPorSatelite,
+        limpiarFiltroSatelite,
+      }}
+    >
       {children}
     </ImagenesContext.Provider>
   );
